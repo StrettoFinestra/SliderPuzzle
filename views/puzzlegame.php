@@ -17,21 +17,34 @@ session_start();
     <?php
     if (isset($_SESSION['usuario_valido'])) {
 
-        //Variables Declaration
-        $id_usuario = $_SESSION['id_usuario'];
-        $date = gmdate('d-m-y', time());
+        if (isset($_REQUEST['aceptar'])) {
+           
+            //Asignación de credenciales enviadas por el usuario en variables de trabajo
+            $id_usuario = $_SESSION['id_usuario'];
+            $tiempo = $_REQUEST['user_time'];
+            $movimientos = $_REQUEST['user_movements'];
+            $fecha = $_REQUEST['current_time'];
+
+            require_once("../class/usuarios.php");
+            $obj_usuarios = new usuarios();
+            $usuario_validado = $obj_usuarios->registrar_resultado($id_usuario, $tiempo, $movimientos, $fecha);
+            header("Refresh:0");
+        }
 
         ?>
 
         <center>
+
             </br></br>
             </br></br>
 
             <!--Superior Keypad-->
+            <button id="output">00:00:00</button>
             <button id="Hackerman" class="Hacker" onClick="hackerMan();">Hackerman <span class="tooltiptext">Play Like a
                     Boss!</span></button>
             </br></br>
 
+            <!--PuzzleBoard-->
             <div id="table" style="display: table;" class="disabletable">
                 <div id="row1" style="display: table-row;">
                     <div id="cell11" class="tile1 disabletile" onClick="clickTile(1,1);"></div>
@@ -53,12 +66,61 @@ session_start();
             </br>
 
             <!--Bottom Keypad-->
-            <button id="output">00:00:00</button>
+            <a class="enabledbutton" href="dashboard.php">Regresar</a>
             <button id="startgame" class="enabledbutton" onClick="startGame();">Start</button>
-            <button id="newgame" class="disabledbutton" onClick="newGame();"disabled>New Game</button>
-            <p id="movements">0</p>
-            <p id="date"></p>
+            <button id="newgame" class="disabledbutton" onClick="newGame();" disabled>New Game</button>
+
         </center>
+
+        <!--Win Modal-->
+        <div id="my-modal" class="modal" align="center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onClick="closeModal();">&times;</span>
+                    <br>
+                </div>
+                <div class="modal-body">
+                    <h2>¡Felicidades has Ganado!</h2>
+                    <br>
+                    <p><i>"We Are Made of Star Stuff"</i></p>
+                    <p><i><b>-Carl Sagan</b></i></p>
+                    <form id="winmodalform" action="puzzlegame.php" method="post">
+                        <input id="input-time" name="user_time" type="hidden"><b id="modal-time"></b></input>
+                        </br>
+                        <input id="input-movements" name="user_movements" type="hidden"><b id="modal-movements"></b></input>
+                        <input id="input-date" name="current_time" type="hidden"></input>
+                        </br></br>
+                        <button id="ok" type="submit" name="aceptar" value="true">Aceptar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!--Hackerman Win Modal-->
+        <div id="my-modal-hackerman" class="modal" align=center>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onClick="closeModal();">&times;</span>
+                    <br>
+                </div>
+                <div class="modal-body">
+                    <h2>YOU WON AS A HACKERMAN!</h2>
+                    <br>
+                    <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/176/251/4d7.png" alt="Mr Robot" height="500" width="500">
+                    <p id="resultadoHackerman"><b></b></p>
+                </div>
+                <div class="modal-footer">
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!--Background Music-->
+        <audio id="StrangersThings" src="https://broalmen.000webhostapp.com/Stranger%20Things%20Theme%20Song%20(C418%20REMIX).mp3" loop></audio>
+        <audio id="MineSweeper" src="https://broalmen.000webhostapp.com/Main%20Theme%20-%20Microsoft%20Minesweeper.mp3" autoplay loop></audio>
 
     <?php
 
@@ -68,49 +130,6 @@ session_start();
         print("<p align='center'> [ <a href='login.php' target='_top'>Conectar</a> ]</p>\n");
     }
     ?>
-
-    <!--Win Modal-->
-    <div id="my-modal" class="modal" align="center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onClick="closeModal();">&times;</span>
-                <br>
-            </div>
-            <div class="modal-body">
-                <h2>¡Felicidades has Ganado!</h2>
-                <br>
-                <p><i>"We Are Made of Star Stuff"</i></p>
-                <p><i><b>-Carl Sagan</b></i></p>
-                <p id="resultado"><b></b></p>
-            </div>
-            <div class="modal-footer">
-                <br>
-            </div>
-        </div>
-    </div>
-
-    <!--Hackerman Win Modal-->
-    <div id="my-modal-hackerman" class="modal" align=center>
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onClick="closeModal();">&times;</span>
-                <br>
-            </div>
-            <div class="modal-body">
-                <h2>YOU WON AS A HACKERMAN!</h2>
-                <br>
-                <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/176/251/4d7.png" alt="Mr Robot" height="500" width="500">
-                <p id="resultadoHackerman"><b></b></p>
-            </div>
-            <div class="modal-footer">
-                <br>
-            </div>
-        </div>
-    </div>
-
-    <!--Background Music-->
-    <audio id="StrangersThings" src="https://broalmen.000webhostapp.com/Stranger%20Things%20Theme%20Song%20(C418%20REMIX).mp3" loop></audio>
-    <audio id="MineSweeper" src="https://broalmen.000webhostapp.com/Main%20Theme%20-%20Microsoft%20Minesweeper.mp3" autoplay loop></audio>
 
 </body>
 

@@ -5,8 +5,7 @@
 var time = 0;
 var running = 0;
 var centinela = 1;
-var tiempo_transcurrido = "Your time is: ";
-const panelDeTiempo = document.getElementById("output");
+var tiempo_transcurrido = "Tiempo: ";
 const strangerthings = document.getElementById("StrangersThings");
 const minesweeper = document.getElementById("MineSweeper");
 
@@ -72,8 +71,7 @@ function getDate() {
     if (seconds < 10)
         seconds = "0" + seconds;
 
-    date = cur_day + " " + hours + ":" + minutes + ":" + seconds;
-    document.getElementById("date").innerHTML = date;
+    return cur_day + " " + hours + ":" + minutes + ":" + seconds;
 
 }
 
@@ -81,12 +79,13 @@ function getDate() {
 function closeModal() {
 
     if (hackerCentinela == 0) {
-        console.log("HackermanModal");
-        reset();
-        window.location.href = "http://localhost/ganador";
+
+        document.getElementById("my-modal").style.display = 'none';
+        document.getElementById("ok").click();
+        //window.location.href = "http://localhost/ganador";
     } else {
         document.getElementById("my-modal").style.display = 'none';
-        reset();
+        document.getElementById("winmodalform").click();
     }
 
 }
@@ -95,17 +94,37 @@ function closeModal() {
 function hackerManModal() {
 
     if (hackerCentinela == 0) {
-    document.getElementById("my-modal-hackerman").style.display = "block";
-    document.getElementById("resultadoHackerman").style.fontFamily = "Arial"
-    document.getElementById("resultadoHackerman").style.fontWeight = "Bold"
-    document.getElementById("resultadoHackerman").style.fontSize = "25px"
-    resultadoHackerman.innerHTML = tiempo_transcurrido.concat(panelDeTiempo.innerText);
-    disabledbutton();
+        document.getElementById("my-modal-hackerman").style.display = "block";
+        document.getElementById("resultadoHackerman").style.fontFamily = "Arial";
+        document.getElementById("resultadoHackerman").style.fontWeight = "Bold";
+        document.getElementById("resultadoHackerman").style.fontSize = "25px";
+        resultadoHackerman.innerHTML = tiempo_transcurrido.concat(stopwatch.innerText);
+        disabledbutton();
     }
 }
 
 //Win Modal
 function winModal() {
+
+    //DOM variable initialization
+
+    modal_time = document.getElementById("modal-time");
+    input_time = document.getElementById("input-time");
+    modal_movement = document.getElementById("modal-movements");
+    input_movement = document.getElementById("input-movements");
+    input_date = document.getElementById("input-date");
+    stopwatch = document.getElementById("output");
+
+    //DOM manipulation
+
+    modal_time.innerHTML = tiempo_transcurrido.concat(stopwatch.innerText);
+    input_time.value = stopwatch.innerText;
+    modal_movement.innerHTML = "Movimientos: " + (movements + 1);
+    input_movement.value = (movements + 1);
+    input_date.value = getDate();
+
+    //Modal revelation
+
     document.getElementById("my-modal").style.display = 'block';
 }
 
@@ -285,7 +304,6 @@ function clickTile(row, column) {
                 console.log("Celda: " + row + column + "\nClase: " + tile + "\nPosición anterior de blanco: derecha");
                 //If start a new game and move a valid cell then count a new movement for user
                 movements += 1;
-                document.getElementById("movements").innerHTML = movements;
                 console.log("Movimientos: " + movements);
                 return;
             }
@@ -297,7 +315,6 @@ function clickTile(row, column) {
                 console.log("Celda: " + row + column + "\nClase: " + tile + "\nPosición anterior de blanco: izquierda");
                 //If start a new game and move a valid cell then count a new movement for user
                 movements += 1;
-                document.getElementById("movements").innerHTML = movements;
                 console.log("Movimientos: " + movements);
                 return;
             }
@@ -309,7 +326,6 @@ function clickTile(row, column) {
                 console.log("Celda: " + row + column + "\nClase: " + tile + "\nPosición anterior de blanco: arriba");
                 //If start a new game and move a valid cell then count a new movement for user
                 movements += 1;
-                document.getElementById("movements").innerHTML = movements;
                 console.log("Movimientos: " + movements);
                 return;
             }
@@ -321,7 +337,6 @@ function clickTile(row, column) {
                 console.log("Celda: " + row + column + "\nClase: " + tile + "\nPosición anterior de blanco: abajo");
                 //If start a new game and move a valid cell then count a new movement for user
                 movements += 1;
-                document.getElementById("movements").innerHTML = movements;
                 console.log("Movimientos: " + movements);
                 return;
             }
@@ -370,5 +385,7 @@ function newGame() {
 }
 
 function winGame() {
+    startStopWatch();
     winModal();
+    reset();
 }

@@ -19,7 +19,7 @@ class usuarios extends modeloCredencialesBD{
     public function registrar_usuario($name,$lname,$usr,$pwd){
 
         //Se recibe el ususario y contraseña encriptada
-        $instruccion = "CALL pf_sp_registrar_usuario('" . $name . "','" . $lname.  "','" . $usr.  "','" . $pwd."')";
+        $instruccion = "CALL pf_sp_insertar_usuario('" . $name . "','" . $lname.  "','" . $usr.  "','" . $pwd."')";
         //print_r($instruccion);
 
         //Se retorna el resultado de la consulta la cuál es un filtro con la claúsula WHERE
@@ -28,6 +28,20 @@ class usuarios extends modeloCredencialesBD{
 
         $this->_db->close();
 
+        return $consulta;
+    }
+
+    public function registrar_resultado($id,$time,$mvm,$date){
+
+        //Se recibe el ususario y contraseña encriptada
+        $instruccion = "CALL pf_sp_insertar_usuarios_resultados('" . $id . "','" . $time.  "','" . $mvm.  "','" . $date."')";
+        //print_r($instruccion);
+
+        //Se retorna el resultado de la consulta la cuál es un filtro con la claúsula WHERE
+        $consulta = $this->_db->query($instruccion);
+        //print_r($consulta);
+
+        $this->_db->close();
         return $consulta;
     }
 

@@ -18,7 +18,7 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])){
     
     //Se importa clase usuarios
 
-    require_once("class/usuarios.php");
+    require_once("../class/usuarios.php");
 
     //Se instancia un objeto de la clase
     $obj_usuarios = new usuarios();
@@ -61,7 +61,7 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])){
 
 <head>
     <title>Laboratorio 14 -Login al sitio de Noticias</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
 </head>
 
 <body>

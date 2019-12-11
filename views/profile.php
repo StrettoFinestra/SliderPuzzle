@@ -7,7 +7,7 @@ session_start();
 
 <head>
     <title>Perfil</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
 
 </head>
 <h1>Perfil</h1>
@@ -27,7 +27,7 @@ if (isset($_POST['actualizar'], $_POST)) {
     $clave_crypt = crypt($clave, $salt);
     //print ($clave_crypt);
 
-    require_once('class/usuarios.php');
+    require_once("../class/usuarios.php");
 
     //Se realiza actualización
     $obj_usuarios = new usuarios();

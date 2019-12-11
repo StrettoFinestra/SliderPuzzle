@@ -6,7 +6,7 @@
 
 <head>
     <title>Laboratorio 14 -Login al sitio de Noticias</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
 </head>
 
 <body>

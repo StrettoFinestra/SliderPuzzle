@@ -3,7 +3,7 @@
 
 <head>
     <title>Laboratorio 14 -Login al sitio de Noticias</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
 
 </head>
 <h1>Registrarse</h1>
@@ -22,7 +22,7 @@ if (isset($_POST['registrar'], $_POST)) {
     $clave_crypt = crypt($clave, $salt);
     //print ($clave_crypt);
 
-    require_once('class/usuarios.php');
+    require_once("../class/usuarios.php");
     $obj_usuarios = new usuarios();
     $usuario_validado = $obj_usuarios->registrar_usuario($nombre, $apellido, $usuario, $clave_crypt);
     print("</br></br>\n");

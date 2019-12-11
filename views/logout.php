@@ -4,7 +4,7 @@
 <html lang="es">
 <head>
     <title>Desconectar</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
 </head>
 <body>
 

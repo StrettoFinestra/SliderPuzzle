@@ -6,13 +6,13 @@ session_start();
 
 <head>
     <title>PuzzleGame</title>
-    <link rel="stylesheet" type="text/css" href="css/gameinterface.css">
-    <link rel="stylesheet" type="text/css" href="css/sliderpuzzle.css">
+    <link rel="stylesheet" type="text/css" href="../css/gameinterface.css">
+    <link rel="stylesheet" type="text/css" href="../css/sliderpuzzle.css">
 </head>
 
 <body onload="keyGenerator()">
 
-    <script src="js/gamecontroller.js"></script>
+    <script src="../js/gamecontroller.js"></script>
 
     <?php
     if (isset($_SESSION['usuario_valido'])) {
@@ -79,8 +79,8 @@ session_start();
             <div class="modal-body">
                 <h2>¡Felicidades has Ganado!</h2>
                 <br>
-                <p><i>"I have failed again and again in my life, that's why I've achieved success."</i></p>
-                <p><i><b>-Michael Jordan</b></i></p>
+                <p><i>"We Are Made of Star Stuff"</i></p>
+                <p><i><b>-Carl Sagan</b></i></p>
                 <p id="resultado"><b></b></p>
             </div>
             <div class="modal-footer">

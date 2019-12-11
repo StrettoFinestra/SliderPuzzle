@@ -21,7 +21,7 @@
         <li><a href="profile.php">Perfil</a>
         <li><a href="puzzlegame.php">Rompecabezas</a>
         <li><a href="top10.php">Top 10</a>
-        <li><a href="historial.php">Mi Historial de Resultados</a>
+        <li><a href="history.php">Mi Historial de Resultados</a>
         <li><a href="about.php">Acerca de</a>
     </ul>
 

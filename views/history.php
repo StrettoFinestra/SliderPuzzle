@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html LANG="es">
 
@@ -39,21 +40,21 @@ session_start();
         });
     </script>
 
-    <h1>Consulta de top10</h1>
+    <h1>Historial de Resultados</h1>
     <?php
 
-    require_once("../class/reports.php");  
+    require_once("../class/reports.php");
     //Se instancia un nuevo objeto de la clase noticia
     $obj_report = new reports();
     $nfilas = 0;
 
-    //Se llama al método consultar_top10 el cuál retorna los datos de la DB estructurados en una matriz bidimensional asociativa en una variable llamada $top10
-    $top10 = $obj_report->consultar_top10();
-    //print_r($top10);
+    //Se llama al método consultar_history el cuál retorna los datos de la DB estructurados en una matriz bidimensional asociativa en una variable llamada $history
+    $history = $obj_report->consultar_resultados_usuario($_SESSION['id_usuario']);
+    //print_r($history);
 
     //Cuenta la cantidad de filas
-    if (is_array($top10)) {
-        $nfilas = count($top10);
+    if (is_array($history)) {
+        $nfilas = count($history);
     }
 
     //Si se retornan datos se imprime la tabla
@@ -71,7 +72,7 @@ session_start();
         print("</thead>");
         print("<tbody>");
 
-        foreach ($top10 as $resultado) {
+        foreach ($history as $resultado) {
             print("<tr>\n");
             print("<td>" . $resultado['usuario'] . "</td>\n");
             print("<td>" . $resultado['tiempo'] . "</td>\n");

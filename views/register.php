@@ -46,7 +46,7 @@ if (isset($_POST['registrar'], $_POST)) {
     print("</br>");
     print("<p><input type='submit' name='registrar' value='Registrarse'</p>\n");
     print("</form>\n");
-    print("<p align='center'> [  <a href='login.php'>Regresar</a>  ]</p>\n");
+    print("<p align='center'> [  <a href='dashboard.php'>Regresar</a>  ]</p>\n");
 }
 
 ?>

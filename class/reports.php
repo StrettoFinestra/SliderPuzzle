@@ -17,10 +17,33 @@ class reports extends modeloCredencialesBD{
 
     //Consultas de información 
 
-    public function consultar_usuario($campo,$centinel){
+    public function consultar_top10(){
 
         //Se recibe el ususario y contraseña encriptada
-        $instruccion = "CALL pf_sp_consultar_usuario('" . $campo . "','" . $centinel . "')";
+        $instruccion = "CALL pf_sp_consultar_top10()";
+        //print_r($instruccion);
+
+        //Se retorna el resultado de la consulta la cuál es un filtro con la claúsula WHERE
+        $consulta = $this->_db->query($instruccion);
+        //print_r($consulta);
+
+        //Se hace fetch del objeto mysqli y se genera un arreglo unidimensional
+        //El cuál tiene una fila, la cual es el resultado de la función count, de la cantidad de registros que coincidieron
+        $resultado = $consulta->fetch_all(MYSQLI_ASSOC);
+        //print_r($resultado);
+
+        //Si se encontró un resultado se devuelve
+        if ($resultado){
+            return $resultado;
+            $resultado->close();
+            $this->_db->close();
+        }
+    }
+
+    public function consultar_resultados_usuario($id){
+
+        //Se recibe el ususario y contraseña encriptada
+        $instruccion = "CALL pf_sp_consultar_resultados_usuario('" . $id . "')";
         //print_r($instruccion);
 
         //Se retorna el resultado de la consulta la cuál es un filtro con la claúsula WHERE

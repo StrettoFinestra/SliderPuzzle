@@ -62,6 +62,7 @@ if (isset($_POST['actualizar'], $_POST)) {
     print("   <input type='password' name='clave' size='15' required></p>\n");
     print("<p><input type='submit' name='actualizar' value='Guardar Cambios'</p>\n");
     print("</form>\n");
+    print("<hr>");
     print("<p align='center'> [  <a href='login.php'>Regresar</a>  ]</p>\n");
 }
 

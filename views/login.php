@@ -72,7 +72,7 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])){
 -->
 
 <?php
-    //Sesión inciada
+    //Sesión iniciada
     if (isset($_SESSION['usuario_valido'])){
         header('Location: dashboard.php');
 ?>

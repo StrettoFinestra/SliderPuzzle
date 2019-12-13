@@ -84,7 +84,7 @@ session_start();
                     <br>
                     <p><i>"We Are Made of Star Stuff"</i></p>
                     <p><i><b>-Carl Sagan</b></i></p>
-                    <form id="winmodalform" action="puzzlegame.php" method="post">
+                    <form id="winmodalform" action="cosmos.php" method="post">
                         <input id="input-time" name="user_time" type="hidden"><b id="modal-time"></b></input>
                         </br>
                         <input id="input-movements" name="user_movements" type="hidden"><b id="modal-movements"></b></input>

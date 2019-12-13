@@ -100,19 +100,22 @@ include("master/header.php");
     }
     ?>
 
+    <?php
+    //Footer
+    //include("master/footer.php");
+    ?>
+
     <!--Multimedia-->
 
-    <!--Background Video -->
-    <div class="fullscreen-bg">
-        <video class="fullscreen-bg__video" video autobuffer autoplay loop poster="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/space_traveling.jpg">
-            <source id="mp4" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/videos/startraveling.mp4" type="video/mp4">
-        </video>
-    </div>
-    <!--Background Video -->
+    <?php
+    //Video Controller
+    include("master/videocontroller.php");
+    ?>
 
-    <!--Background Music-->
-    <audio id="horizon" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/music/horizon.mp3" autoplay loop></audio>
-    <!--Background Music-->
+    <?php
+    //Music Controller
+    include("master/soundcontroller.php");
+    ?>
 
     <!--Multimedia-->
 

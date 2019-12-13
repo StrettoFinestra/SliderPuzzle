@@ -15,7 +15,7 @@ include("master/header.php");
 
             <!--Navigation-->
             <?php
-                include("master/navigation.html");
+                include("master/navigation.php");
                 ?>
 
             <ul class="cd-hero-slider">
@@ -28,8 +28,8 @@ include("master/header.php");
                                 <div class="tm-img-gallery gallery-one">
                                     <!-- Gallery One pop up connected with JS code below -->
                                     <div class="tm-img-gallery-info-container">
-                                        <h2 class="tm-text-title tm-gallery-title tm-white"><span class="tm-white">Multi Color Image Gallery</span></h2>
-                                        <p class="tm-text">This responsive HTML template includes three gallery pages. Multi color is designed by Tooplate. You may use this layout for your website.
+                                        <h2 class="tm-text-title tm-gallery-title tm-white"><span class="tm-white">Hacía el Infinito y Más Allá...</span></h2>
+                                        <p class="tm-text">Hecha un vistazo a la galería de astros, y elije uno que desees conocer y ¡Comienza el Viaje!.
                                         </p>
                                     </div>
                                     <div class="grid-item">
@@ -38,37 +38,7 @@ include("master/header.php");
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Image <span>One</span></h2>
                                                 <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-01.jpg">View more</a>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="grid-item">
-                                        <figure class="effect-bubba">
-                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
-                                            <figcaption>
-                                                <h2 class="tm-figure-title">Image <span>Two</span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-02.jpg">View more</a>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="grid-item">
-                                        <figure class="effect-bubba">
-                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
-                                            <figcaption>
-                                                <h2 class="tm-figure-title">Image <span>Three</span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-03.jpg">View more</a>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="grid-item">
-                                        <figure class="effect-bubba">
-                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
-                                            <figcaption>
-                                                <h2 class="tm-figure-title">Image <span>Four</span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-04.jpg">View more</a>
+                                                <a href="cosmos.php">View more</a>
                                             </figcaption>
                                         </figure>
                                     </div>
@@ -243,18 +213,20 @@ include("master/header.php");
             </ul> <!-- .cd-hero-slider -->
 
             <?php
-                //load JS files and animation
+                //Footer
                 include("master/footer.php");
-            ?>
+                ?>
 
         </div> <!-- .cd-hero -->
 
-        <?php
-            //load JS files and animation
-            include("master/loadscripts.html");
-        ?>
-
     <?php
+
+        //load JS files and animation
+        include("master/loadscripts.php");
+
+        //Multimedia - Sound Controller
+        include("master/soundcontroller.php");
+
     } else {
         //Redirect Unauthenticated User
         header('Location: rejected.php');

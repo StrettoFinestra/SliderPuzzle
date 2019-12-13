@@ -440,10 +440,6 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 	font-size: 1.4em;
 }
 
-#google-map {
-    height: 430px;
-    width: 100%;    
-}
 
 .tm-copyright-text {
 	background-color: rgba(0, 0, 0, 0.3);
@@ -871,9 +867,4 @@ figure.effect-bubba:hover p {
 		padding-left: 0; 
 		padding-right: 0;
 	}	
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	.tm-2-col-textbox-2 { margin-right: 15px; }
-	#google-map { height: 520px; }
 }

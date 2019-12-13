@@ -9,7 +9,7 @@ $current_pag = substr($page, 34, $counter);
 <html lang="es">
 
 <head>
-    <title>Star Traveler</title>
+    <title>Stars Traveler</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A trip to Cosmos">
     <meta name="author" content="Alexander Almengor">
@@ -22,7 +22,11 @@ $current_pag = substr($page, 34, $counter);
 
         case "login.php":
             echo ('<link rel="stylesheet" type="text/css" href="../css/login.css">');
-            break;
+            echo ('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+            <!-- Google web font "Open Sans" -->
+            <link rel="stylesheet" href="http://localhost/ProyectoFinal/SliderPuzzle/fonts/font-awesome-4.5.0/css/font-awesome.min.css">                
+            <!-- Font Awesome -->');    
+        break;
 
         case "dashboard.php":
             echo ('<!-- load stylesheets -->
@@ -37,10 +41,17 @@ $current_pag = substr($page, 34, $counter);
             <link rel="stylesheet" href="../css/magnific-popup.css">                                 
             <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
             <link rel="stylesheet" href="../css/tooplate-style.css">');
+            echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
             break;
 
         default:
-            echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
+            echo ('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+            <!-- Google web font "Open Sans" -->
+            <link rel="stylesheet" href="http://localhost/ProyectoFinal/SliderPuzzle/fonts/font-awesome-4.5.0/css/font-awesome.min.css">                
+            <!-- Font Awesome -->
+            <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
+            <link rel="stylesheet" href="../css/tooplate-style.css">');
+        break;
     }
 
     ?>

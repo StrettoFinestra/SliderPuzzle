@@ -7,7 +7,12 @@
                 <!-- Gallery One pop up connected with JS code below -->
                 <div class="tm-img-gallery-info-container">
                     <h2 class="tm-text-title tm-gallery-title tm-white"><span class="tm-white">Hacía el Infinito y Más Allá...</span></h2>
-                    <p class="tm-text">Hecha un vistazo a la galería de astros, elije uno que te llame la atención y ¡Comienza el Viaje!.
+                    <p class="tm-text">
+                        <span class="tm-white">Hecha un vistazo a la galería de astros, elije uno que te llame la atención y </span>
+                        </br>
+                        <span class="tm-white">comienza el Viaje.</span>
+                        </br>
+                        <span class="tm-white"><?php echo ($_SESSION['mensaje']) ?></span>
                     </p>
                 </div>
 

@@ -7,6 +7,17 @@ include("master/header.php");
 <body>
 
     <?php
+    //Contador de visitas
+    if (isset($_COOKIE['contador'])) {
+        setcookie('contador', $_COOKIE['contador'] + 1, time() + 365 * 24 * 60 * 60);
+        $_SESSION['mensaje'] = '¡<b>Gracias por visitarnos '. $_SESSION['usuario_valido']. '</b>!&nbsp<p></p>' .
+        '<b>Número de visitas: </b>' . $_COOKIE['contador'];
+    } else {
+        //Caduca en un año
+        setcookie('contador', 1, time() + 365 * 24 * 60 * 60);
+        $_SESSION['mensaje'] = '¡Bienvenido! ' . $_SESSION['usuario_valido'];
+    }
+
     if (isset($_SESSION['usuario_valido'])) {
         ?>
 

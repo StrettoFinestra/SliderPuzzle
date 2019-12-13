@@ -28,6 +28,14 @@ $current_pag = substr($page, 34, $counter);
             <!-- Font Awesome -->');    
         break;
 
+        case "cosmos.php":
+            echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
+            echo ('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+            <!-- Google web font "Open Sans" -->
+            <link rel="stylesheet" href="http://localhost/ProyectoFinal/SliderPuzzle/fonts/font-awesome-4.5.0/css/font-awesome.min.css">                
+            <!-- Font Awesome -->');
+        break;
+
         case "dashboard.php":
             echo ('<!-- load stylesheets -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  

@@ -1,20 +1,11 @@
 <?php
-session_start();
-?>
+//Se inicia la sesión
 
-<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="es">
-
-<head>
-    <title>Perfil</title>
-    <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
-
-</head>
-<h1>Perfil</h1>
-<?php
 
 if (isset($_POST['actualizar'], $_POST)) {
-
+    session_start();
+    //print_r($_REQUEST);
+    //print_r($_SESSION);
     //Recuperación de datos del formulario y de la sesión e inicialización de variables
     $id = $_SESSION['id_usuario'];
     $nombre = $_REQUEST['nombre'];
@@ -32,15 +23,18 @@ if (isset($_POST['actualizar'], $_POST)) {
     //Se realiza actualización
     $obj_usuarios = new usuarios();
     $usuario_validado = $obj_usuarios->actualizar_usuario($id, $nombre, $apellido, $usuario, $clave_crypt);
-    
+
     //Se actualiza datos de sesión
     $obj_usuarios2 = new usuarios();
-    $consulta = $obj_usuarios2->consultar_usuario($id,1);
+    $consulta = $obj_usuarios2->consultar_usuario($id, 1);
     $datos_usr = $obj_usuarios2->fetch_usr_data($consulta);
-    print("</br></br>\n");
-    print("<p align='center'>¡Felicidades se han actualizado los cambios con éxito!</p>\n");
-    print("<p align='center'> [  <a href='profile.php'>Regresar</a>  ]</p>\n");
 
+    //Si se dio al botón actualizar se muestra mensaje de confirmación de cambios~
+    //Redirect Unauthenticated User
+    header('Location: success.php');
+    ?>
+
+<?php
 } else {
 
     //Inicialización de variables de sesión
@@ -48,24 +42,71 @@ if (isset($_POST['actualizar'], $_POST)) {
     $nombre = $_SESSION['nombre'];
     $apellido = $_SESSION['apellido'];
     $usuario = $_SESSION['usuario_valido'];
+    ?>
+    <div class="cd-full-width">
+        <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="4">
+            <form name='profile' action='profile.php' method='POST'>
+                <div class="row tm-white-box-margin-b">
 
-    print("<br><br>\n");
-    print("<form class='entrada' name='login' action='profile.php' method='POST'>\n");
-    print("<p><b>Nota: </b>Por seguridad debes confirmar tu contraseña antes de hacer algún cambio.</p>");
-    print("<p><label class='etiqueta-entrada'>Nombre:</label>\n");
-    print("   <input type='text' name='nombre' size='15' required value='$nombre' ></p>\n");
-    print("<p><label class='etiqueta-entrada'>Apellido:</label>\n");
-    print("   <input type='text' name='apellido' size='15' required value='$apellido'></p>\n");
-    print("<p><label class='etiqueta-entrada'>Usuario/Correo:</label>\n");
-    print("   <input type='text' name='usuario' size='15' required value='$usuario'></p>\n");
-    print("<p><label class='etiqueta-entrada'>Clave:</label>\n");
-    print("   <input type='password' name='clave' size='15' required></p>\n");
-    print("<p><input type='submit' name='actualizar' value='Guardar Cambios'</p>\n");
-    print("</form>\n");
-    print("<hr>");
-    print("<p align='center'> [  <a href='login.php'>Regresar</a>  ]</p>\n");
+                    <div class="col-xs-12">
+                        <div class="tm-flex">
+                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding">
+                                <h2 class="tm-text-title">Biografía</h2>
+                                <p class="tm-text">Este tu espacio del basto universo para escribir una breve bítacora de tu último viaje
+                                    o contarle a los demás un poco de ti, también puedes actualizar tu "Dog Tag".
+                                    </br>
+                                    <span class="tm-text"><b>Nota: Recuerda ingresar tu contraseña antes de actualizar, es solo una buena práctica de seguridad.</b></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row tm-white-box-margin-b">
+                    <div class="col-xs-12">
+                        <div class="tm-flex">
+                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                <h2 class="tm-text-title">Nombre</h2>
+                                <?php
+                                    print("<input type='text' name='nombre' class='form-control' value='$nombre' placeholder='Ingrese su nombre' required/>");
+                                    ?>
+                            </div>
+                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                <h2 class="tm-text-title">Apellido</h2>
+                                <?php
+                                    print("<input type='text' name='apellido' class='form-control' value='$apellido' placeholder='Ingrese su apellido' required/>");
+                                    ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row tm-white-box-margin-b">
+                    <div class="col-xs-12">
+                        <div class="tm-flex">
+                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                <h2 class="tm-text-title">Usuario</h2>
+                                <?php
+                                    print("<input type='text' name='usuario' class='form-control' value='$usuario' placeholder='Ingrese su usuario' required/>");
+                                    ?>
+                            </div>
+                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                <h2 class="tm-text-title">Clave</h2>
+                                <?php
+                                    print("<input type='password' name='clave' class='form-control' placeholder='Ingrese su clave' required/>");
+                                    ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button name="actualizar" type="submit" class="pull-xs-right tm-submit-btn" value="true">Actualizar</button>
+                </form>
+                <a href="logout.php">
+                    <button class="pull-xs-right tm-submit-btn">Cerrar Sesión</button>
+                </a>
+        </div>
+    </div> <!-- .cd-full-width -->
+<?php
 }
-
 ?>
 
 <body>

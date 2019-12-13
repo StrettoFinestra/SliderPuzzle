@@ -1,8 +1,3 @@
-<?php
-//Header
-include("master/header.php");
-?>
-
 <!--Clases necesarias del Plug-In-->
 <div class="cd-full-width">
     <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="2">

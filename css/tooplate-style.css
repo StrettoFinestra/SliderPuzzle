@@ -6,7 +6,7 @@ http://www.tooplate.com/view/2086-multi-color
 
 */
 body {
-	background-color: #EB1E79;
+	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	font-family: Tahoma, sans-serif;
 	font-size: 17px;
@@ -289,7 +289,7 @@ button:focus { outline: none; }
 	cursor: pointer;
 	border-radius: 20px;
 	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-bottom: -10px;
 	width: 100%;
 }
 

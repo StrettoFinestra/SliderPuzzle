@@ -10,7 +10,7 @@ BODY {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  background: url(https://www.101computing.net/wp/wp-content/uploads/flower.png);
+  background: url("http://localhost/ProyectoFinal/SliderPuzzle/resources/images/astronaut.jpg");
   cursor: pointer;
   text-decoration: none;
 }
@@ -55,7 +55,11 @@ BODY {
 .disabletile {
   pointer-events: none;
 }
+.board{
 
+ align-items: center;
+  
+}
 .disabletable {
   cursor: not-allowed;
 }

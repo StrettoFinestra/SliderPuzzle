@@ -29,8 +29,9 @@ include("master/header.php");
 
         ?>
 
-        <center>
+        <center class="board">
 
+            </br></br>
             </br></br>
             </br></br>
 

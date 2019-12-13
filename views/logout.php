@@ -27,6 +27,7 @@
     }
     //De otro modo se muestra el mensaje de que no existía una sesión
     else{
+        //Redirect Unauthenticated User
         header('Location: rejected.php');
     }
 ?>

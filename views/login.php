@@ -72,6 +72,7 @@ include("master/header.php");
 
         //Intento de entrada fallido
     } else if (isset($usuario)) {
+        //Redirect Unauthenticated User
         header('Location: rejected.php');
     }
 

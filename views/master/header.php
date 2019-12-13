@@ -10,6 +10,7 @@ $current_pag = substr($page, 34, $counter);
 
 <head>
     <title>Star Traveler</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A trip to Cosmos">
     <meta name="author" content="Alexander Almengor">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +23,22 @@ $current_pag = substr($page, 34, $counter);
         case "login.php":
             echo ('<link rel="stylesheet" type="text/css" href="../css/login.css">');
             break;
+
+        case "dashboard.php":
+            echo ('<!-- load stylesheets -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+            <!-- Google web font "Open Sans" -->
+            <link rel="stylesheet" href="http://localhost/ProyectoFinal/SliderPuzzle/fonts/font-awesome-4.5.0/css/font-awesome.min.css">                
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="../css/bootstrap.min.css">                                      
+            <!-- Bootstrap style -->
+            <link rel="stylesheet" href="../css/hero-slider-style.css">                              
+            <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
+            <link rel="stylesheet" href="../css/magnific-popup.css">                                 
+            <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
+            <link rel="stylesheet" href="../css/tooplate-style.css">');
+            break;
+
         default:
             echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
     }

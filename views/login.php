@@ -55,23 +55,12 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
 }
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="es">
-
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-</head>
+<?php
+//Header
+include("master/header.php");
+?>
 
 <body>
-
-    <!--Background Video -->
-    <div class="fullscreen-bg">
-        <video class="fullscreen-bg__video" video autobuffer autoplay loop poster="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/space_traveling.jpg">
-            <source id="mp4" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/videos/startraveling.mp4" type="video/mp4">
-        </video>
-    </div>
-    <!--Background Video -->
 
     <?php
     //Sesión iniciada
@@ -83,9 +72,7 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
 
         //Intento de entrada fallido
     } else if (isset($usuario)) {
-        print("<br><br>\n");
-        print("<p align='center'>Acceso no autorizado</p>\n"); // ¿Por qué print y el carácter especial "\n"?
-        print("<p align='center'>[ <a href='login.php'>Conectar</a> ] </p>\n");
+        header('Location: rejected.php');
     }
 
     //Sesión no iniciada
@@ -94,11 +81,11 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
 
         <div class="form-area">
             <h3>Login</h3>
-            <form action="">
+            <form action="login.php">
                 <p>Usuario/E-mail</p>
-                <input type="text" name="usuario" required placeholder="Ingresa tu usuario o E-mail aquí">
+                <input type="text" name="usuario" required placeholder="Ingrese su usuario o E-mail">
                 <p>Contraseña</p>
-                <input type="password" name="clave" required placeholder="Ingresa tu contraseña aquí">
+                <input type="password" name="clave" required placeholder="Ingrese su contraseña">
                 <input type="submit" value="Entrar">
                 <div align="center">
                     <a href="register.php">Registrarse</a>
@@ -108,13 +95,25 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
             </form>
         </div>
 
-         <!--Background Music-->
-         <audio id="Knowing" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/music/horizon.mp3" autoplay loop></audio>
-        <!--Background Music-->
-
     <?php
     }
     ?>
+
+    <!--Multimedia-->
+
+    <!--Background Video -->
+    <div class="fullscreen-bg">
+        <video class="fullscreen-bg__video" video autobuffer autoplay loop poster="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/space_traveling.jpg">
+            <source id="mp4" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/videos/startraveling.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!--Background Video -->
+
+    <!--Background Music-->
+    <audio id="horizon" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/music/horizon.mp3" autoplay loop></audio>
+    <!--Background Music-->
+
+    <!--Multimedia-->
 
 </body>
 

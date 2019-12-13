@@ -1,12 +1,12 @@
-<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="es">
 
-<head>
-    <title>Laboratorio 14 -Login al sitio de Noticias</title>
-    <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
+<?php
 
-</head>
-<h1>Registrarse</h1>
+//Header
+include("master/header.php");
+?>
+
+<body id="register">
+
 <?php
 
 if (isset($_POST['registrar'], $_POST)) {
@@ -25,30 +25,42 @@ if (isset($_POST['registrar'], $_POST)) {
     require_once("../class/usuarios.php");
     $obj_usuarios = new usuarios();
     $usuario_validado = $obj_usuarios->registrar_usuario($nombre, $apellido, $usuario, $clave_crypt);
-    print("</br></br>\n");
-    print("<p align='center'>¡Felicidades ha sido registrado con éxito!</p>\n");
-    print("<p align='center'> [  <a href='login.php'>Conectar</a>  ]</p>\n");
     
-} else {
-
-    print("<br><br>\n");
-    print("<p class= 'parrafocentrado'>Para registrarse ingrese sus datos.</p>\n");
-    print("</br></br>");
-    print("<form class='entrada' name='login' action='register.php' method='POST'>\n");
-    print("<p><label class='etiqueta-entrada'>Nombre:</label>\n");
-    print("   <input type='text' name='nombre' size='15' required></p>\n");
-    print("<p><label class='etiqueta-entrada'>Apellido:</label>\n");
-    print("   <input type='text' name='apellido' size='15' required></p>\n");
-    print("<p><label class='etiqueta-entrada'>Usuario/Correo:</label>\n");
-    print("   <input type='text' name='usuario' size='15' required></p>\n");
-    print("<p><label class='etiqueta-entrada'>Clave:</label>\n");
-    print("   <input type='password' name='clave' size='15' required></p>\n");
-    print("</br>");
-    print("<p><input type='submit' name='registrar' value='Registrarse'</p>\n");
-    print("</form>\n");
-    print("<p align='center'> [  <a href='dashboard.php'>Regresar</a>  ]</p>\n");
-}
-
 ?>
 
-<body>
+    <div class="div-area">
+        </br></br></br>
+        <h3>Registro Exitoso</h3>
+        <p>Bienvenido viajero, ¡tu aventura está por comenzar!.</p>
+        </br></br>
+        <a href="login.php"><button>Ingresar</button></a>
+    </div>
+
+<?php   
+} else{
+?>
+
+    <div class="form-area" >
+            <h3>Registro</h3>
+            <form name='login' action='register.php' method='POST'>
+                <p>Nombre</p>
+                <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+                <p>Apellido</p>
+                <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
+                <p>Usuario/Correo</p>
+                <input type="text" name="usuario" placeholder="Ingrese su usuario o correo" required>
+                <p>Contraseña</p> 
+                <input type="password" name="clave" placeholder="Ingrese su contraseña" required>
+                <input type="submit" name="registrar" value="Registrar">
+                <div align="center">
+                <a href="login.php">Regresar</a>
+                </div>
+            </form>
+    </div>
+
+<?php
+}
+?>
+
+</body>
+</html>

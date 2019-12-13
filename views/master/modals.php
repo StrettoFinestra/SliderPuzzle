@@ -16,7 +16,7 @@
                 <input id="input-movements" name="user_movements" type="hidden"><b id="modal-movements"></b></input>
                 <input id="input-date" name="current_time" type="hidden"></input>
                 </br></br>
-                <button id="ok" type="submit" name="aceptar" value="true">Aceptar</button>
+                <button id="ok" class="enabledbutton" type="submit" name="aceptar" value="true">Aceptar</button>
             </form>
         </div>
         <div class="modal-footer">

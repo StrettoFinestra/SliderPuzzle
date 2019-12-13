@@ -6,20 +6,20 @@ http://www.tooplate.com/view/2086-multi-color
 
 */
 body {
-	background-color: #DDDDDD;
-	color: black;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	background-color: #EB1E79;
+	color: white;
+	font-family: Tahoma, sans-serif;
 	font-size: 17px;
 	font-weight: 300;
 	overflow-x: hidden;
 }
 
-.tm-white { color: #FFFFFF; }
+.tm-white { color: white; }
 
 ul { padding: 0; margin: 0; }
 figure { margin: 0; }
 p:last-child { margin-bottom: 0; }
-a { color: #3f97c9; }
+a { color: #CC483C; }
 a, button { transition: all 0.3s ease; }
 a:hover,
 a:focus {
@@ -30,7 +30,7 @@ a:focus {
 .tm-brand-icon { 
 	padding: 10px;
     background: none;
-    color: black;
+    color: white;
     font-size: 4rem;
     margin-right: 15px;
 }
@@ -76,7 +76,7 @@ a:focus {
 	    justify-content: space-between;
 	padding-left: 10px;
 	padding-right: 10px;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(0, 0, 0, 0.5);
 	overflow: auto;
 }
 
@@ -84,7 +84,8 @@ a:focus {
 	float: right;
 	font-size: 1.75rem;
 	padding: 1rem 1.5rem;
-	background: rgba(255,255,255,0.7);
+	background: #1F162C;
+	color:white;
 	border-radius: 0;
 	position: absolute;
 	right: 20px;
@@ -113,7 +114,7 @@ button:focus { outline: none; }
 .cd-slider-nav a,
 .navbar-nav .nav-link {
 	background-color: transparent;
-	color: black;
+	color: white;
     display: table-cell;
     font-weight: 400;
     font-size: 1em;
@@ -125,7 +126,7 @@ button:focus { outline: none; }
 .cd-slider-nav .nav-item.selected .nav-link,
 .cd-slider-nav .nav-link:hover,
 .cd-slider-nav .nav-link:focus {
-	color: #ffffff;
+	color: white;
 }
 
 /* Hero Slider */
@@ -136,48 +137,48 @@ button:focus { outline: none; }
 }
 
 /* Background & menu colors */
-.cd-hero-slider li:nth-of-type(1) { background-color: rgba(56, 182, 230, 0.62); }
-.cd-hero-slider li:nth-of-type(2) { background-color: rgba(237, 84, 76, 0.62); }
-.cd-hero-slider li:nth-of-type(3) { background-color: rgba(234, 163, 25, 0.62); }
-.cd-hero-slider li:nth-of-type(4) { background-color: rgba(22, 181, 163, 0.62); }
-.cd-hero-slider li:nth-of-type(5) { background-color: rgba(68, 127, 202, 0.62); }
+.cd-hero-slider li:nth-of-type(1) { background-color: rgba(0, 0, 0, 0.5); }
+.cd-hero-slider li:nth-of-type(2) { background-color: rgba(0, 0, 0, 0.5); }
+.cd-hero-slider li:nth-of-type(3) { background-color: rgba(0, 0, 0, 0.5);}
+.cd-hero-slider li:nth-of-type(4) { background-color: rgba(0, 0, 0, 0.5); }
+.cd-hero-slider li:nth-of-type(5) { background-color: rgba(0, 0, 0, 0.5); }
 
 .cd-slider-nav .nav-item:nth-of-type(1).selected .nav-link,
 .cd-slider-nav .nav-item:nth-of-type(1) .nav-link:hover,
 .cd-slider-nav .nav-item:nth-of-type(1) .nav-link:focus {	
-	background-color: #38b6e6;
+	background-color: rgba(204, 94, 44, 0.62);
 }
 
 .cd-slider-nav .nav-item:nth-of-type(2).selected .nav-link,
 .cd-slider-nav .nav-item:nth-of-type(2) .nav-link:hover,
 .cd-slider-nav .nav-item:nth-of-type(2) .nav-link:focus {
 			
-	background-color: #ed544c;
+	background-color: rgba(194, 32, 140, 0.62);
 }
 
 .cd-slider-nav .nav-item:nth-of-type(3).selected .nav-link,
 .cd-slider-nav .nav-item:nth-of-type(3) .nav-link:hover,
 .cd-slider-nav .nav-item:nth-of-type(3) .nav-link:focus {
 		
-	background-color: #eaa319;	
+	background-color: rgba(204, 94, 44, 0.62);
 }
 
 .cd-slider-nav .nav-item:nth-of-type(4).selected .nav-link,
 .cd-slider-nav .nav-item:nth-of-type(4) .nav-link:hover,
 .cd-slider-nav .nav-item:nth-of-type(4) .nav-link:focus {
 	
-	background-color: #16b5a3;
+	background-color: rgba(194, 32, 140, 0.62);
 }
 
 .cd-slider-nav .nav-item:nth-of-type(5).selected .nav-link,
 .cd-slider-nav .nav-item:nth-of-type(5) .nav-link:hover,
 .cd-slider-nav .nav-item:nth-of-type(5) .nav-link:focus {
 	
-	background-color: #447fca;		
+	background-color: rgba(204, 94, 44, 0.62);		
 }
 
-.tm-bg-white-translucent { background-color: rgba(255,255,255,0.8); }
-.tm-bg-white-translucent p { color: black; }
+.tm-bg-white-translucent { background-color: rgba(0, 0, 0, 0.5); }
+.tm-bg-white-translucent p { color:white;}
 .tm-textbox { 
 	display: inline-block; 
 	width: 100%;
@@ -203,15 +204,15 @@ button:focus { outline: none; }
 /*.tm-3-col-container { overflow: auto; }*/
 
 .cd-hero-slider h2.tm-text-title {
-	color: #000002;
+	color: white;
     font-size: 1.6em;
     font-weight: 400;
 }
 
 /* footer */
 .tm-social-link {
-	background-color: rgba(255,255,255,0.40);
-    color: black;
+	background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     display: inline-block;
     width: 35px;
     height: 35px;
@@ -263,32 +264,38 @@ button:focus { outline: none; }
 .tm-submit-btn {
 	font-size: 1.8rem;
 }
+
 .form-control {
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(0, 0, 0, 0.5);
+	color:white;
 	border-radius: 0;
 	padding: 1rem 2rem;
 }
 
-.form-control::-webkit-input-placeholder { color: #000000; }
-.form-control:-moz-placeholder { color: #000000; } /* Firefox 18- */
-.form-control::-moz-placeholder { color: #000000; } /* Firefox 19+ */
-.form-control:-ms-input-placeholder { color: #000000; }
+.form-control::-webkit-input-placeholder { color: white; }
+.form-control:-moz-placeholder { color: white; } /* Firefox 18- */
+.form-control::-moz-placeholder { color: white;} /* Firefox 19+ */
+.form-control:-ms-input-placeholder { color:white; }
 
 .form-group { margin-bottom: 1.5rem; }
 
 .tm-submit-btn {
-	background-color: #0066CC;
 	border: none;
+	height: 40px;
+	outline: none;
 	color: white;
-	padding: 10px 50px;
-	margin-top: 10px;
-	font-weight: 400;
-	font-size: 2.5rem;
+	font-size: 15px;
+	background-color: #CC483C;
+	cursor: pointer;
+	border-radius: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
 }
 
 .tm-submit-btn:hover,
 .tm-submit-btn:focus {
-	background-color: #2277EE;
+	background-color: #1F162C;
 }
 
 textarea { height: 168px; }
@@ -300,13 +307,13 @@ textarea { height: 168px; }
    Author's custom styles
    ========================================================================== */
    #loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2000; }
-   #loader { display: block; position: relative; left: 50%; top: 50%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; border: 3px solid transparent; border-top-color: #3498db; /* Chrome, Opera 15+, Safari 5+ */
+   #loader { display: block; position: relative; left: 50%; top: 50%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; border: 3px solid transparent; border-top-color: #EB1E79;/* Chrome, Opera 15+, Safari 5+ */
    	animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */ z-index: 2001; }
    #loader:before { content: ""; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; border-radius: 50%; border: 3px solid transparent;
-   	border-top-color: #e74c3c; /* Chrome, Opera 15+, Safari 5+ */
+   	border-top-color: #CC483C; /* Chrome, Opera 15+, Safari 5+ */
    animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */ }
    #loader:after { content: ""; position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border-radius: 50%; border: 3px solid transparent;
-border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */ }
+border-top-color: #38D381; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */ }
 @keyframes spin {
 	0%   {  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
 		transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
@@ -355,7 +362,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
     top: 44px;
 }
 
-.cd-slider-nav .navbar-nav { background-color: rgba(255,255,255,0.7); }
+.cd-slider-nav .navbar-nav { background-color: rgba(0, 0, 0, 0.5); }
 
 .cd-slider-nav a, 
 .navbar-nav .nav-link { height: 50px; }
@@ -436,7 +443,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 .tm-textbox-padding { padding: 35px 30px; }
 
 .cd-hero-slider h2.tm-contact-info {
-	color: black;
+	color: white;
 	font-size: 1.4em;
 }
 
@@ -455,7 +462,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 .tm-footer-link { color: white; }
 .tm-footer-link:hover,
 .tm-footer-link:focus {
-	color: yellow;
+	color: rgba(0, 0, 0, 0.5);
 }
 
 /*.tm-home-fa {
@@ -499,7 +506,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }
 
 figure.effect-bubba {
-    background-color: #9e5406;
+    background-color: #1F162C;
 }
 
 .cd-hero-slider .selected .cd-full-width figure.effect-bubba h2.tm-figure-title {

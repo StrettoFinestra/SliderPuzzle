@@ -4,7 +4,7 @@ session_start();
 include("master/header.php");
 ?>
 
-<body id="dashboard">
+<body>
 
     <?php
     if (isset($_SESSION['usuario_valido'])) {
@@ -21,10 +21,11 @@ include("master/header.php");
             <ul class="cd-hero-slider">
 
                 <!-- Page 1 Gallery One -->
-                <li class="selected">
+                <li id="cosmos" class="selected">
                     <div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content" data-page-no="1" data-page-type="gallery">
-                            <div class="tm-img-gallery-container">
+                            
+                        <div class="tm-img-gallery-container">
                                 <div class="tm-img-gallery gallery-one">
                                     <!-- Gallery One pop up connected with JS code below -->
                                     <div class="tm-img-gallery-info-container">
@@ -32,24 +33,60 @@ include("master/header.php");
                                         <p class="tm-text">Hecha un vistazo a la galería de astros, y elije uno que desees conocer y ¡Comienza el Viaje!.
                                         </p>
                                     </div>
+
                                     <div class="grid-item">
                                         <figure class="effect-bubba">
                                             <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span>One</span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                <h2 class="tm-figure-title">Picture <span>One</span></h2>
+                                                <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
                                                 <a href="cosmos.php">View more</a>
                                             </figcaption>
                                         </figure>
                                     </div>
+
+                                    <div class="grid-item">
+                                        <figure class="effect-bubba">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
+                                            <figcaption>
+                                                <h2 class="tm-figure-title">Picture <span>One</span></h2>
+                                                <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
+                                                <a href="cosmos.php">View more</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="grid-item">
+                                        <figure class="effect-bubba">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
+                                            <figcaption>
+                                                <h2 class="tm-figure-title">Picture <span>One</span></h2>
+                                                <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
+                                                <a href="cosmos.php">View more</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="grid-item">
+                                        <figure class="effect-bubba">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
+                                            <figcaption>
+                                                <h2 class="tm-figure-title">Picture <span>One</span></h2>
+                                                <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
+                                                <a href="cosmos.php">View more</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </li>
 
                 <!-- Page 2 Gallery Two -->
-                <li>
+                <li id="top10">
                     <div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content" data-page-no="2" data-page-type="gallery">
                             <div class="tm-img-gallery-container">
@@ -79,7 +116,7 @@ include("master/header.php");
                 </li>
 
                 <!-- Page 3 Gallery Three -->
-                <li>
+                <li id="history">
                     <div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content" data-page-no="3" data-page-type="gallery">
                             <div class="tm-img-gallery-container">
@@ -108,7 +145,7 @@ include("master/header.php");
                 </li>
 
                 <!-- Page 4 About -->
-                <li>
+                <li id="profile">
                     <div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="4">
                             <div class="row tm-white-box-margin-b">
@@ -161,7 +198,7 @@ include("master/header.php");
                 </li>
 
                 <!-- Page 5 Contact Us -->
-                <li>
+                <li id="about">
                     <div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="5">
                             <div class="tm-contact-page">

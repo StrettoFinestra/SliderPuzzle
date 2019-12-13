@@ -38,8 +38,44 @@ body {
     background-color: #141122;
 }
 
-#dashboard{
-    background: url('http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg');
+#cosmos{
+    background: url('http://localhost/ProyectoFinal/SliderPuzzle/resources/images/starship.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #141122;
+}
+
+#top10{
+    background: url('http://localhost/ProyectoFinal/SliderPuzzle/resources/images/aircraftcarrier.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #141122;
+}
+
+#history{
+    background: url('http://localhost/ProyectoFinal/SliderPuzzle/resources/images/supergirl.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #141122;
+}
+
+#profile{
+    background: url('http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spaceman.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #141122;
+}
+
+#about{
+    background: url('http://localhost/ProyectoFinal/SliderPuzzle/resources/images/solarsystem.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;

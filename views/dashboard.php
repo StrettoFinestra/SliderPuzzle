@@ -34,7 +34,7 @@ include("master/header.php");
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-bubba">
-                                            <img src="img/tm-img-01-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Image <span>One</span></h2>
                                                 <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -44,7 +44,7 @@ include("master/header.php");
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-bubba">
-                                            <img src="img/tm-img-02-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Image <span>Two</span></h2>
                                                 <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
@@ -54,7 +54,7 @@ include("master/header.php");
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-bubba">
-                                            <img src="img/tm-img-03-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Image <span>Three</span></h2>
                                                 <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -64,7 +64,7 @@ include("master/header.php");
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-bubba">
-                                            <img src="img/tm-img-04-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Image <span>Four</span></h2>
                                                 <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
@@ -93,7 +93,7 @@ include("master/header.php");
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-bubba">
-                                            <img src="img/tm-img-12-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Picture <span>One</span></h2>
                                                 <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>
@@ -123,7 +123,7 @@ include("master/header.php");
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-bubba">
-                                            <img src="img/tm-img-01-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="http://localhost/ProyectoFinal/SliderPuzzle/resources/images/spacemancave.jpg" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title">Picture <span>One</span></h2>
                                                 <p class="tm-figure-description">Suspendisse id placerat risus. Mauris quis luctus risus.</p>

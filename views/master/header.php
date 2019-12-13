@@ -9,7 +9,7 @@ $current_pag = substr($page, 34, $counter);
 <html lang="es">
 
 <head>
-    <title>Space Traveler</title>
+    <title>Space Travelers</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A trip to Cosmos">
     <meta name="author" content="Alexander Almengor">

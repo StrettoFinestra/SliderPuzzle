@@ -25,7 +25,8 @@
     </div>
 </div>
 
-<!--Hackerman Win Modal-->
+<!--Hackerman Win Modal
+    En desarrollo
 <div id="my-modal-hackerman" class="modal" align="center">
     <div class="modal-content">
         <div class="modal-header">
@@ -43,3 +44,4 @@
         </div>
     </div>
 </div>
+-->

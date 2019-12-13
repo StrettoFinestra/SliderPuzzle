@@ -9,7 +9,7 @@ switch ($current_pag) {
 
     case "cosmos.php":
         echo ('<!--Background Music-->
-        <audio id="horizon" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/music/horizon.mp3" autoplay loop></audio>
+        <audio id="horizon" src="http://localhost/ProyectoFinal/SliderPuzzle/resources/music/reconfig.mp3" autoplay loop></audio>
         <!--Background Music-->');
         break;
     default:

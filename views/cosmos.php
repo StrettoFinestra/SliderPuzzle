@@ -20,12 +20,11 @@ include("master/header.php");
             $movimientos = $_REQUEST['user_movements'];
             $fecha = $_REQUEST['current_time'];
 
-            /*
             require_once("../class/usuarios.php");
             $obj_usuarios = new usuarios();
             $usuario_validado = $obj_usuarios->registrar_resultado($id_usuario, $tiempo, $movimientos, $fecha);
             header("Refresh:0");
-            */
+            
         }
 
         ?>

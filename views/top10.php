@@ -1,94 +1,136 @@
 <?php
-session_start();
+//Header
+include("master/header.php");
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html LANG="es">
 
-<head>
-    <title>Ejemplo DataTable JQuery</title>
-    <link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.min.css">
-    <Script type="text/javascript" language="javascript" src="../js/jquery-3.1.1.js"></script>
-    <Script type="text/javascript" language="javascript" src="../js/jquery.dataTables.min.js"></script>
-</head>
+<!--Clases necesarias del Plug-In-->
+<div class="cd-full-width">
+    <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="2">
 
-<body>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#grid').DataTable({
-                "lengthMenu:": [5, 10, 20, 50],
-                "order": [
-                    [0, "asc"]
-                ],
-                "language": {
-                    "lengthMenu": "Mostrar _MENU_ registrados por página",
-                    "zeroRecords": "No existen resultados en su búsqueda",
-                    "info": "Mostrando página _PAGE_ de _PAGES_",
-                    "infoEmpty": "No hay registros disponibles",
-                    "infoFiltered": "(Buscado entre _MAX_ registros en total)",
-                    "search": "Buscar: ",
-                    "paginate": {
-                        "first": "Primero",
-                        "last": "Último",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    },
-                }
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#grid').DataTable({
+                    "pageLength": 5,
+                    "lengthMenu:": [5, 10, 20, 50],
+                    "order": [
+                        [0, "asc"]
+                    ],
+                    "language": {
+                        "lengthMenu": "Mostrar _MENU_ viajes por página.",
+                        "zeroRecords": "No existen resultados en su búsqueda",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(Buscado entre _MAX_ registros en total)",
+                        "search": "Buscar: ",
+                        "paginate": {
+                            "first": "Primero",
+                            "last": "Último",
+                            "next": "Siguiente",
+                            "previous": "Anterior"
+                        },
+                    }
+                });
+
+                // $("*").css("font-family", "arial").css('font-size', '12px');
             });
+        </script>
 
-            $("*").css("font-family", "arial").css('font-size', '12px');
-        });
-    </script>
+        <?php
 
-    <h1>Consulta de top10</h1>
-    <?php
+        require_once("../class/reports.php");
+        //Se instancia un nuevo objeto de la clase noticia
+        $obj_report = new reports();
+        $nfilas = 0;
 
-    require_once("../class/reports.php");  
-    //Se instancia un nuevo objeto de la clase noticia
-    $obj_report = new reports();
-    $nfilas = 0;
+        //Se llama al método consultar_top10 el cuál retorna los datos de la DB estructurados en una matriz bidimensional asociativa en una variable llamada $top10
+        $top10 = $obj_report->consultar_top10();
+        //print_r($top10);
 
-    //Se llama al método consultar_top10 el cuál retorna los datos de la DB estructurados en una matriz bidimensional asociativa en una variable llamada $top10
-    $top10 = $obj_report->consultar_top10();
-    //print_r($top10);
-
-    //Cuenta la cantidad de filas
-    if (is_array($top10)) {
-        $nfilas = count($top10);
-    }
-
-    //Si se retornan datos se imprime la tabla
-    if ($nfilas > 0) {
-
-        print("<table id='grid' class='display' cellspacing='0'>\n");
-        print("<thead>");
-        print("<tr>\n");
-        print("<th>Usuario</th>\n");
-        print("<th>Tiempo</th>\n");
-        print("<th>Movimientos</th>\n");
-        print("<th>Dificultad</th>\n");
-        print("<th>Fecha</th>\n");
-        print("</tr>\n");
-        print("</thead>");
-        print("<tbody>");
-
-        foreach ($top10 as $resultado) {
-            print("<tr>\n");
-            print("<td>" . $resultado['usuario'] . "</td>\n");
-            print("<td>" . $resultado['tiempo'] . "</td>\n");
-            print("<td>" . $resultado['movimientos'] . "</td>\n");
-            print("<td>" . $resultado['dificultad'] . "</td>\n");
-            print("<td>" . $resultado['fecha'] . "</td>\n");
-            print("</tr>");
+        //Cuenta la cantidad de filas
+        if (is_array($top10)) {
+            $nfilas = count($top10);
         }
-        print("</tbody>");
-        print("</table>\n");
-        print("<p align='center'> [  <a href='dashboard.php'>Regresar</a>  ]</p>\n");
-    } else {
-        print("<b>No hay resultados disponibles para mostrar pero ¡Puedes ser el primero!.</b>");
-        print("<hr>");
-        print("<p align='center'> [  <a href='dashboard.php'>Regresar</a>  ]</p>\n");
-    }
-    ?>
-</body>
 
-</html>
+        //Si se retornan datos se imprime la tabla
+        if ($nfilas > 0) {
+            ?>
+
+            <div class="row tm-white-box-margin-b">
+
+                <div class="col-xs-12">
+                    <div class="tm-flex">
+                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding">
+                            <h2 class="tm-text-title">Leyendas</h2>
+                            <p class="tm-text">
+                                            <span class="tm-white">La crema innata de viajeros tiene el honor de ser condecorados en el Top10.</span>
+                                            </br>
+                                            <span class="tm-white">¡Anímate a ser parte!</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row tm-white-box-margin-b">
+
+                <div class="col-xs-12">
+                    <div class="tm-flex">
+                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding">
+                            <h2 class='font-weight-bold mb-5'>Top 10</h2>
+                            <style>
+                                .table-hover tbody tr:hover td,
+                                .table-hover tbody tr:hover th {
+                                    background-color: #7C1566;
+                                }
+                            </style>
+                            <table id='grid' class='table table table-hover table-bordeless' cellspacing='0'>
+                                <thead style='text-align: center; color: white; background-color: #CC483C;'>
+                                    <tr text-center>
+                                        <th>Usuario</th>
+                                        <th>Tiempo</th>
+                                        <th>Movimientos</th>
+                                        <th>Dificultad</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        foreach ($top10 as $resultado) {
+                                            print("     <tr text-center>\n");
+                                            print("         <td text-center>" . $resultado['usuario'] . "</td>\n");
+                                            print("         <td text-center>" . $resultado['tiempo'] . "</td>\n");
+                                            print("         <td text-center>" . $resultado['movimientos'] . "</td>\n");
+                                            print("         <td text-center>" . $resultado['dificultad'] . "</td>\n");
+                                            print("         <td text-center>" . $resultado['fecha'] . "</td>\n");
+                                            print("     </tr>\n");
+                                        }
+                                        ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php
+        } else {
+            //Se muestra información de que no hay resultados disponibles
+            ?>
+
+            <div class="tm-img-gallery-info-container">
+                <h2 class="tm-text-title tm-gallery-title"><span class="tm-white">Leyendas</span></h2>
+                <p class="tm-text">
+                    <span class="tm-white">No hay resultados disponibles para mostrar en este momento.</span>
+                    </br>
+                    <span class="tm-white">Pero ¡Anímate puedes ser el primero!.</span>
+                </p>
+                <a href="dashboard.php">
+                    <button class="pull-xs-right tm-submit-btn">¡Jugar!</button>
+                </a>
+            </div>
+
+        <?php
+        }
+        ?>
+    </div>
+</div> <!-- .cd-full-width -->

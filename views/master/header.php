@@ -9,7 +9,7 @@ $current_pag = substr($page, 34, $counter);
 <html lang="es">
 
 <head>
-    <title>Stars Traveler</title>
+    <title>Space Traveler</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A trip to Cosmos">
     <meta name="author" content="Alexander Almengor">
@@ -38,9 +38,8 @@ $current_pag = substr($page, 34, $counter);
             <!-- Bootstrap style -->
             <link rel="stylesheet" href="../css/hero-slider-style.css">                              
             <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
-            <link rel="stylesheet" href="../css/magnific-popup.css">                                 
-            <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
             <link rel="stylesheet" href="../css/tooplate-style.css">');
+            echo ('<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.min.css">');
             echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
             break;
 

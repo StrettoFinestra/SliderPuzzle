@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="tm-navbar-bg">
                 
-            <a class="navbar-brand" href="#"><i class="fa fa-user tm-brand-icon"></i><?php echo($_SESSION['nombre']);?></a>
+            <a class="navbar-brand" href="#"><i class="fa fa-user tm-brand-icon"></i><?php echo ($_SESSION['nombre'] . "&nbsp;" . $_SESSION['apellido']);?></a>
 
             <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
                 &#9776;

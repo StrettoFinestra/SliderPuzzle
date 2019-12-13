@@ -25,16 +25,8 @@ $current_pag = substr($page, 34, $counter);
             echo ('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
             <!-- Google web font "Open Sans" -->
             <link rel="stylesheet" href="http://localhost/ProyectoFinal/SliderPuzzle/fonts/font-awesome-4.5.0/css/font-awesome.min.css">                
-            <!-- Font Awesome -->');    
-        break;
-
-        case "cosmos.php":
-            echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
-            echo ('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
-            <!-- Google web font "Open Sans" -->
-            <link rel="stylesheet" href="http://localhost/ProyectoFinal/SliderPuzzle/fonts/font-awesome-4.5.0/css/font-awesome.min.css">                
             <!-- Font Awesome -->');
-        break;
+            break;
 
         case "dashboard.php":
             echo ('<!-- load stylesheets -->
@@ -51,6 +43,16 @@ $current_pag = substr($page, 34, $counter);
             echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
             break;
 
+        case "cosmos.php":
+            echo ('<link rel="stylesheet" type="text/css" href="../css/appinterface.css">');
+            echo ('<link rel="stylesheet" type="text/css" href="../css/gameinterface.css">');
+            echo ('<link rel="stylesheet" type="text/css" href="../css/sliderpuzzle.css">');
+            echo ('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+                <!-- Google web font "Open Sans" -->
+                <link rel="stylesheet" href="http://localhost/ProyectoFinal/SliderPuzzle/fonts/font-awesome-4.5.0/css/font-awesome.min.css">                
+                <!-- Font Awesome -->');
+            break;
+
         default:
             echo ('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
             <!-- Google web font "Open Sans" -->
@@ -58,7 +60,7 @@ $current_pag = substr($page, 34, $counter);
             <!-- Font Awesome -->
             <link rel="stylesheet" type="text/css" href="../css/appinterface.css">
             <link rel="stylesheet" href="../css/tooplate-style.css">');
-        break;
+            break;
     }
 
     ?>
